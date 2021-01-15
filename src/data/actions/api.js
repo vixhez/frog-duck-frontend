@@ -7,3 +7,11 @@ export const getFrogs = () => {
         });
     }
 }
+
+export const getDucks = () => {
+    return (dispatch) => {
+        axios.get('ducks').then(({ data }) => {
+            dispatch({ type: "GET_DUCKS", data: data.data });
+        });
+    }
+}

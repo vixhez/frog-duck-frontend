@@ -2,19 +2,21 @@ import { connect } from 'react-redux';
 import App from './App';
 
 import { getFrogs } from '../../data/actions/api'
+import { getDucks } from '../../data/actions/api'
 
-const mapStateToProps = (state) => {
-    const frog = state.frogs[0];
+// const mapStateToProps = (state) => {
+//     const frog = state.frogs[0];
     
-    return {
-        ...frog,
-    }
-};
+//     return {
+//         ...frog,
+//     }
+// };
 
 const mapDispatchToProps = dispatch => {
     return {
         getFrogs: () => dispatch(getFrogs()),
+        getDucks: () => dispatch(getDucks()),
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
