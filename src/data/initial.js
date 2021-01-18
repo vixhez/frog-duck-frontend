@@ -1,6 +1,8 @@
 const initial = {
     frogs: [],
     ducks: [],
+    frogsLoaded: false,
+    ducksLoaded: false,
     // frogObject: {
     //     regularName: '',
     //     latinName: '',
