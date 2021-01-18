@@ -1,6 +1,7 @@
 import { Component } from 'react';
 // import FrogDirectory from '../FrogDirectory';
-import DuckDirectory from '../DuckDirectory';
+// import DuckDirectory from '../DuckDirectory';
+import DuckDirectory from '../Directory/DuckDirectory';
 
 class App extends Component {
     componentDidMount() {

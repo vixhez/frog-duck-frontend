@@ -2,17 +2,8 @@ import { connect } from 'react-redux';
 import Directory from './Directory';
 
 
-const mapStateToProps = (state) => {
-    const duck = state.ducks[3];
-    
-    return {
-        ...duck,
-        // regular_name: duck.regular_name,
-        // latin_name: duck.latin_name,
-        // description: duck.description,
-        // conservation: duck.conservation,
-        // location: duck.location,
-    }
-};
+const mapStateToProps = ({ ducks }) => ({
+    animals: ducks,
+});
 
 export default connect (mapStateToProps)(Directory);
