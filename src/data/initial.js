@@ -3,28 +3,13 @@ const initial = {
     ducks: [],
     frogsLoaded: false,
     ducksLoaded: false,
-    // frogObject: {
-    //     regularName: '',
-    //     latinName: '',
-    //     description: '',
-    //     conservation: '',
-    //     location: '',
-    //     extroversion: 0,
-    //     colourfulness: 0,
-    //     kindness: 0,
-    //     activeness: 0,
-    // },
-    // duckObject: {
-    //     regularName: '',
-    //     latinName: '',
-    //     description: '',
-    //     conservation: '',
-    //     location: '',
-    //     extroversion: 0,
-    //     colourfulness: 0,
-    //     kindness: 0,
-    //     activeness: 0,
-    // }
+
+    extroversion: 5,
+    colourfulness: 5,
+    generosity: 5,
+    activeness: 5,
+
+    quizComplete: false,
 }
 
 export default initial;

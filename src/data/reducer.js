@@ -10,6 +10,11 @@ const getDucks = (state, action) => ({
     ducksLoaded: true,
 });
 
+const submitQuiz = (state, action) => ({
+    ...state,
+    quizComplete: true,
+})
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "GET_FROGS": return getFrogs(state, action);

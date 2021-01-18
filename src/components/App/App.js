@@ -1,5 +1,6 @@
 import { Component } from 'react';
 
+import Quiz from '../Quiz';
 import DuckDirectory from '../Directory/DuckDirectory';
 import FrogDirectory from '../Directory/FrogDirectory';
 
@@ -14,6 +15,8 @@ class App extends Component {
         return (
             <>
             <h1>Testing!</h1>
+
+            <Quiz />
 
             { ducksLoaded && frogsLoaded ? 
             <>
