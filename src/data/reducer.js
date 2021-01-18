@@ -1,11 +1,13 @@
 const getFrogs = (state, action) => ({
     ...state,
     frogs: action.data,
+    frogsLoaded: true,
 });
 
 const getDucks = (state, action) => ({
     ...state,
     ducks: action.data,
+    ducksLoaded: true,
 });
 
 const reducer = (state, action) => {

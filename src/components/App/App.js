@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import FrogDirectory from '../Directory/FrogDirectory';
-import DuckDirectory from '../Directory/DuckDirectory';
+// import FrogDirectory from '../FrogDirectory';
+import DuckDirectory from '../DuckDirectory';
 
 class App extends Component {
     componentDidMount() {
@@ -13,12 +13,16 @@ class App extends Component {
     // }
 
     render() {
+        const { frogsLoaded, ducksLoaded } = this.props;
+
         return (
             <>
             <h1>Testing!</h1>
 
-            <FrogDirectory />
-            <DuckDirectory />
+            { frogsLoaded && ducksLoaded ? 
+            <div className="duckDirectoryParent">
+                <DuckDirectory />
+            </div> : null }
             </>
         );
     }

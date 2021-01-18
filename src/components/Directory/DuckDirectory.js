@@ -3,7 +3,7 @@ import Directory from './Directory';
 
 
 const mapStateToProps = (state) => {
-    const duck = state.ducks[0];
+    const duck = state.ducks[3];
     
     return {
         ...duck,
