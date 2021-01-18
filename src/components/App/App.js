@@ -1,18 +1,13 @@
 import { Component } from 'react';
-// import FrogDirectory from '../FrogDirectory';
-// import DuckDirectory from '../DuckDirectory';
+
 import DuckDirectory from '../Directory/DuckDirectory';
+import FrogDirectory from '../Directory/FrogDirectory';
 
 class App extends Component {
     componentDidMount() {
-        this.props.getFrogs();
         this.props.getDucks();
+        this.props.getFrogs();
     }
-
-    // componentDidMount() {
-    //     this.props.getDucks();
-    // }
-
     render() {
         const { frogsLoaded, ducksLoaded } = this.props;
 
@@ -20,10 +15,17 @@ class App extends Component {
             <>
             <h1>Testing!</h1>
 
-            { frogsLoaded && ducksLoaded ? 
+            { ducksLoaded && frogsLoaded ? 
+            <>
             <div className="duckDirectoryParent">
                 <DuckDirectory />
-            </div> : null }
+            </div>
+            <p>==============</p>
+            <div className="frogDirectoryParent">
+                <FrogDirectory />
+            </div>
+            </>
+            : null }
             </>
         );
     }
