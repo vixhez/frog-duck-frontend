@@ -10,14 +10,16 @@ class App extends Component {
         this.props.getFrogs();
     }
     render() {
-        const { frogsLoaded, ducksLoaded } = this.props;
+        const { quizComplete, frogsLoaded, ducksLoaded } = this.props;
 
-        return (
+        return !quizComplete ? (
             <>
             <h1>Testing!</h1>
 
             <Quiz />
-
+            </>
+            ) : (
+            <>
             { ducksLoaded && frogsLoaded ? 
             <>
             <div className="duckDirectoryParent">
