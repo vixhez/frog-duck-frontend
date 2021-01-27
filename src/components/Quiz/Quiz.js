@@ -6,15 +6,17 @@ class Quiz extends Component {
 
 
         this.state = {
-            extroversion1: this.props.extroversion1,
-            colourfulness1: this.props.colourfulness1,
-            generosity1: this.props.generosity1,
-            activeness1: this.props.activeness1,
-
-            extroversion2: this.props.extroversion2,
-            colourfulness2: this.props.colourfulness2,
-            generosity2: this.props.generosity2,
-            activeness2: this.props.activeness2
+            // traitInputs: {
+            //     extroversion1: this.props.extroversion1,
+            //     extroversion2: this.props.extroversion2,
+            //     generosity1: this.props.generosity1,
+            //     generosity2: this.props.generosity2,
+            //     activeness1: this.props.activeness1,
+            //     activeness2: this.props.activeness2,
+            //     colourfulness1: this.props.colourfulness1,
+            //     colourfulness2: this.props.colourfulness2
+            // }
+            traitInputs: this.props.traitInputs
         }
 
         this.handleExtroversionChange1 = this.handleExtroversionChange1.bind(this);
@@ -26,39 +28,73 @@ class Quiz extends Component {
         this.handleGenerosityChange2 = this.handleGenerosityChange2.bind(this);
         this.handleActivenessChange2 = this.handleActivenessChange2.bind(this);
         this.handleColourfulnessChange2 = this.handleColourfulnessChange2.bind(this);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleExtroversionChange1(e) {
-        this.setState({ extroversion1: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                extroversion1: e.currentTarget.value
+            }
+    })};
 
     handleExtroversionChange2(e) {
-        this.setState({ extroversion2: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                extroversion2: e.currentTarget.value
+            }
+    })};
 
     handleGenerosityChange1(e) {
-        this.setState({ generosity1: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                generosity1: e.currentTarget.value
+            }
+    })};
 
     handleGenerosityChange2(e) {
-        this.setState({ generosity2: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                generosity2: e.currentTarget.value
+            }
+    })};
 
     handleActivenessChange1(e) {
-        this.setState({ activeness1: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                activeness1: e.currentTarget.value
+            }
+    })};
 
     handleActivenessChange2(e) {
-        this.setState({ activeness2: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                activeness2: e.currentTarget.value
+            }
+    })};
 
     handleColourfulnessChange1(e) {
-        this.setState({ colourfulness1: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                colourfulness1: e.currentTarget.value
+            }
+    })};
 
     handleColourfulnessChange2(e) {
-        this.setState({ colourfulness2: e.currentTarget.value });
-    };
+        this.setState({ 
+            traitInputs: {
+                ...this.state.traitInputs,
+                colourfulness2: e.currentTarget.value
+            }
+    })};
 
     handleSubmit(e) {
         e.preventDefault();
