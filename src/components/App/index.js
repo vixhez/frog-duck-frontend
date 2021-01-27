@@ -4,7 +4,8 @@ import App from './App';
 import { getFrogs } from '../../data/actions/api'
 import { getDucks } from '../../data/actions/api'
 
-const mapStateToProps = ({ frogsLoaded, ducksLoaded }) => ({
+const mapStateToProps = ({ quizComplete, frogsLoaded, ducksLoaded }) => ({
+    quizComplete,
     frogsLoaded,
     ducksLoaded
 });

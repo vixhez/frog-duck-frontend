@@ -15,13 +15,15 @@ const initial = {
         activeness2: ''
     },
 
-
     extroversionScore: 5,
     colourfulnessScore: 5,
     generosityScore: 5,
     activenessScore: 5,
 
     quizComplete: false,
+
+    viewAllDucks: false,
+    viewAllFrogs: false,
 }
 
 export default initial;
