@@ -4,10 +4,12 @@ import App from './App';
 import { getFrogs } from '../../data/actions/api'
 import { getDucks } from '../../data/actions/api'
 
-const mapStateToProps = ({ quizComplete, frogsLoaded, ducksLoaded }) => ({
+const mapStateToProps = ({ quizComplete, frogsLoaded, ducksLoaded, showAllDucks, showAllFrogs }) => ({
     quizComplete,
     frogsLoaded,
-    ducksLoaded
+    ducksLoaded,
+    showAllDucks,
+    showAllFrogs
 });
 
 const mapDispatchToProps = dispatch => {

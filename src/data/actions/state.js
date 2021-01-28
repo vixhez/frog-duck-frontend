@@ -4,3 +4,15 @@ export const submitQuiz = (data) => {
         data: data,
     }
 }
+
+export const showAllDucks = (data) => {
+    return {
+        type: "SHOW_ALL_DUCKS"
+    }
+}
+
+export const showAllFrogs = (data) => {
+    return {
+        type: "SHOW_ALL_FROGS"
+    }
+}

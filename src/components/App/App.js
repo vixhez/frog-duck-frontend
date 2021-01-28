@@ -1,6 +1,10 @@
 import { Component } from 'react';
 
 import Quiz from '../Quiz';
+import DuckAlterEgo from '../DuckAlterEgo/DuckAlterEgo';
+import FrogAlterEgo from '../FrogAlterEgo/FrogAlterEgo';
+import DuckDirectoryButton from '../DuckDirectoryButton';
+import FrogDirectoryButton from '../FrogDirectoryButton';
 import DuckDirectory from '../Directory/DuckDirectory';
 import FrogDirectory from '../Directory/FrogDirectory';
 
@@ -10,29 +14,42 @@ class App extends Component {
         this.props.getFrogs();
     }
     render() {
-        const { quizComplete, frogsLoaded, ducksLoaded } = this.props;
+        const { quizComplete, ducksLoaded, frogsLoaded, showAllDucks, showAllFrogs } = this.props;
 
         return !quizComplete ? (
             <>
-            <h1>Testing!</h1>
+                <h1>Testing!</h1>
 
-            <Quiz />
+                <Quiz />
+
+                <DuckDirectoryButton />
+                <FrogDirectoryButton />
             </>
-            ) : (
-            <>
-            { ducksLoaded && frogsLoaded ? 
-            <>
-            <div className="duckDirectoryParent">
-                <DuckDirectory />
-            </div>
-            <p>==============</p>
-            <div className="frogDirectoryParent">
-                <FrogDirectory />
-            </div>
-            </>
-            : null }
-            </>
-        );
+        ) : (
+                <>
+                    { ducksLoaded && frogsLoaded ?
+                        (!showAllDucks && !showAllFrogs ?
+                            <>
+                                <DuckAlterEgo />
+                                <FrogAlterEgo />
+
+                                <DuckDirectoryButton />
+                                <FrogDirectoryButton />
+                            </>
+                            : (
+                                showAllDucks ?
+                                    <div className="duckDirectoryParent">
+                                        <DuckDirectory />
+                                    </div>
+                                    :
+                                    <div className="frogDirectoryParent">
+                                        <FrogDirectory />
+                                    </div>
+                                )
+                        )
+                    : null}
+                </>
+            );
     }
 }
 

@@ -22,8 +22,8 @@ const initial = {
 
     quizComplete: false,
 
-    viewAllDucks: false,
-    viewAllFrogs: false,
+    showAllDucks: false,
+    showAllFrogs: false,
 }
 
 export default initial;
