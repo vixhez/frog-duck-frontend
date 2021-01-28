@@ -1,5 +1,5 @@
-const DuckAlterEgo = () => {
-    <p>ribbet</p>
-}
+const DuckAlterEgo = () => (
+    <p>quack</p>
+);
 
 export default DuckAlterEgo;

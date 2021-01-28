@@ -19,16 +19,16 @@ const submitQuiz = (state, action) => ({
 
     extroversionScore:
         state.extroversionScore +
-        ((action.data.traitInputs.extroversion1 !== 'high' ? (action.data.traitInputs.extroversion1 === 'medium' ? 0 : -3) : 3) + (action.data.traitInputs.extroversion2 !== 'high' ? (action.data.traitInputs.extroversion2 === 'medium' ? 0 : -3) : 3)),
+        ((action.data.traitInputs.extroversion1 !== 'high' ? (action.data.traitInputs.extroversion1 === 'medium' ? 0 : -2.5) : 2.5) + (action.data.traitInputs.extroversion2 !== 'high' ? (action.data.traitInputs.extroversion2 === 'medium' ? 0 : -2.5) : 2.5)),
     generosityScore:
         state.generosityScore +
-        ((action.data.traitInputs.generosity1 !== 'high' ? (action.data.traitInputs.generosity1 === 'medium' ? 0 : -3) : 3) + (action.data.traitInputs.generosity2 !== 'high' ? (action.data.traitInputs.generosity2 === 'medium' ? 0 : -3) : 3)),
+        ((action.data.traitInputs.generosity1 !== 'high' ? (action.data.traitInputs.generosity1 === 'medium' ? 0 : -2.5) : 2.5) + (action.data.traitInputs.generosity2 !== 'high' ? (action.data.traitInputs.generosity2 === 'medium' ? 0 : -2.5) : 2.5)),
     activenessScore:
         state.activenessScore +
-        ((action.data.traitInputs.activeness1 !== 'high' ? (action.data.traitInputs.activeness1 === 'medium' ? 0 : -3) : 3) + (action.data.traitInputs.activeness2 !== 'high' ? (action.data.traitInputs.activeness2 === 'medium' ? 0 : -3) : 3)),
+        ((action.data.traitInputs.activeness1 !== 'high' ? (action.data.traitInputs.activeness1 === 'medium' ? 0 : -2.5) : 2.5) + (action.data.traitInputs.activeness2 !== 'high' ? (action.data.traitInputs.activeness2 === 'medium' ? 0 : -2.5) : 2.5)),
     colourfulnessScore:
         state.colourfulnessScore +
-        ((action.data.traitInputs.colourfulness1 !== 'high' ? (action.data.traitInputs.colourfulness1 === 'medium' ? 0 : -3) : 3) + (action.data.traitInputs.colourfulness2 !== 'high' ? (action.data.traitInputs.colourfulness2 === 'medium' ? 0 : -3) : 3))
+        ((action.data.traitInputs.colourfulness1 !== 'high' ? (action.data.traitInputs.colourfulness1 === 'medium' ? 0 : -2.5) : 2.5) + (action.data.traitInputs.colourfulness2 !== 'high' ? (action.data.traitInputs.colourfulness2 === 'medium' ? 0 : -2.5) : 2.5))
 });
 
 const showAllDucksReducer = (state, action) => ({
