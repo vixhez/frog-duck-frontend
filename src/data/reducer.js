@@ -1,3 +1,5 @@
+import { showAllDucks, showAllFrogs } from "./actions/state";
+
 const getFrogs = (state, action) => ({
     ...state,
     frogs: action.data,
@@ -29,11 +31,25 @@ const submitQuiz = (state, action) => ({
         ((action.data.traitInputs.colourfulness1 !== 'high' ? (action.data.traitInputs.colourfulness1 === 'medium' ? 0 : -3) : 3) + (action.data.traitInputs.colourfulness2 !== 'high' ? (action.data.traitInputs.colourfulness2 === 'medium' ? 0 : -3) : 3))
 });
 
+const showAllDucksReducer = (state, action) => ({
+    ...state,
+    showAllDucks: true,
+    quizComplete: true
+});
+
+const showAllFrogsReducer = (state, action) => ({
+    ...state,
+    showAllFrogs: true,
+    quizComplete: true
+})
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "GET_FROGS": return getFrogs(state, action);
         case "GET_DUCKS": return getDucks(state, action);
         case "SUBMIT_QUIZ": return submitQuiz(state, action);
+        case "SHOW_ALL_DUCKS": return showAllDucksReducer(state, action);
+        case "SHOW_ALL_FROGS": return showAllFrogsReducer(state, action);
         default: return state;
     }
 
