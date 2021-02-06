@@ -1,8 +1,8 @@
 import { Component } from 'react';
 
 import Quiz from '../Quiz';
-import DuckAlterEgo from '../DuckAlterEgo/DuckAlterEgo';
-import FrogAlterEgo from '../FrogAlterEgo/FrogAlterEgo';
+import DuckAlterEgo from '../AlterEgo/DuckAlterEgo';
+import FrogAlterEgo from '../AlterEgo/FrogAlterEgo';
 import DuckDirectoryButton from '../DuckDirectoryButton';
 import FrogDirectoryButton from '../FrogDirectoryButton';
 import DuckDirectory from '../Directory/DuckDirectory';
