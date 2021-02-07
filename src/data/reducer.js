@@ -26,7 +26,7 @@ const submitQuiz = (state, action) => ({
         ((action.data.traitInputs.activeness1 !== 'high' ? (action.data.traitInputs.activeness1 === 'medium' ? 0 : -2.5) : 2.5) + (action.data.traitInputs.activeness2 !== 'high' ? (action.data.traitInputs.activeness2 === 'medium' ? 0 : -2.5) : 2.5)),
     colourfulnessScore:
         state.colourfulnessScore +
-        ((action.data.traitInputs.colourfulness1 !== 'high' ? (action.data.traitInputs.colourfulness1 === 'medium' ? 0 : -2.5) : 2.5) + (action.data.traitInputs.colourfulness2 !== 'high' ? (action.data.traitInputs.colourfulness2 === 'medium' ? 0 : -2.5) : 2.5))
+        ((action.data.traitInputs.colourfulness1 !== 'high' ? (action.data.traitInputs.colourfulness1 === 'medium' ? 0 : -2.5) : 2.5) + (action.data.traitInputs.colourfulness2 !== 'high' ? (action.data.traitInputs.colourfulness2 === 'medium' ? 0 : -2.5) : 2.5))   
 });
 
 const showAllDucksReducer = (state, action) => ({
@@ -41,19 +41,18 @@ const showAllFrogsReducer = (state, action) => ({
     quizComplete: true
 })
 
-const fetchDuckAlterEgo = (state, action) => {
+const fetchDuckAlterEgoReducer = (state, action) => {
     let threeFiltersRemaining = state.ducks.filter(duck =>
-        duck.extroversion === (Math.ceil(state.extroversionScore) || Math.ceil(state.extroversionScore + 1) || Math.ceil(state.extroversionScore - 1)));
+         duck.extroversion >= (state.extroversionScore - 1.5) && duck.extroversion <= (state.extroversionScore + 1.5))
 
     let twoFiltersRemaining = threeFiltersRemaining.filter(duck =>
-        duck.generosity === (Math.ceil(state.generosityScore) || Math.ceil(state.generosityScore + 1) || Math.ceil(state.generosityScore - 1)));
-
+        duck.generosity >= (state.generosityScore - 1.5) && duck.generosity <= (state.generosityScore + 1.5));
 
     let oneFilterRemaining = twoFiltersRemaining.filter(duck =>
-        duck.activeness === (Math.ceil(state.activenessScore) || Math.ceil(state.activenessScore + 1) || Math.ceil(state.activenessScore - 1)));
+        duck.activeness >= (state.activenessScore - 1.5) && duck.activeness <= (state.activenessScore + 1.5));
 
     let alterEgoResult = oneFilterRemaining.filter(duck =>
-        duck.colourfulness === (Math.ceil(state.colourfulnessScore) || Math.ceil(state.colourfulnessScore + 1) || Math.ceil(state.colourfulnessScore - 1)));
+        duck.colourfulness >= (state.colourfulnessScore - 1.5) && duck.colourfulness <= (state.colourfulnessScore + 1.5));
 
     return {
         ...state,
@@ -61,19 +60,18 @@ const fetchDuckAlterEgo = (state, action) => {
     }
 }
 
-const fetchFrogAlterEgo = (state, action) => {
+const fetchFrogAlterEgoReducer = (state, action) => {
     let threeFiltersRemaining = state.frogs.filter(frog =>
-        frog.extroversion === (Math.ceil(state.extroversionScore) || Math.ceil(state.extroversionScore + 1) || Math.ceil(state.extroversionScore - 1)));
+        frog.extroversion >= (state.extroversionScore - 1.5) && frog.extroversion <= (state.extroversionScore + 1.5))
 
-    let twoFiltersRemaining = threeFiltersRemaining.filter(frog =>
-        frog.generosity === (Math.ceil(state.generosityScore) || Math.ceil(state.generosityScore + 1) || Math.ceil(state.generosityScore - 1)));
+   let twoFiltersRemaining = threeFiltersRemaining.filter(frog =>
+       frog.generosity >= (state.generosityScore - 1.5) && frog.generosity <= (state.generosityScore + 1.5));
 
+   let oneFilterRemaining = twoFiltersRemaining.filter(frog =>
+       frog.activeness >= (state.activenessScore - 1.5) && frog.activeness <= (state.activenessScore + 1.5));
 
-    let oneFilterRemaining = twoFiltersRemaining.filter(frog =>
-        frog.activeness === (Math.ceil(state.activenessScore) || Math.ceil(state.activenessScore + 1) || Math.ceil(state.activenessScore - 1)));
-
-    let alterEgoResult = oneFilterRemaining.filter(frog =>
-        frog.colourfulness === (Math.ceil(state.colourfulnessScore) || Math.ceil(state.colourfulnessScore + 1) || Math.ceil(state.colourfulnessScore - 1)));
+   let alterEgoResult = oneFilterRemaining.filter(frog =>
+       frog.colourfulness >= (state.colourfulnessScore - 1.5) && frog.colourfulness <= (state.colourfulnessScore + 1.5));
 
     return {
         ...state,
@@ -93,9 +91,9 @@ const reducer = (state, action) => {
 
         case "SHOW_ALL_FROGS": return showAllFrogsReducer(state, action);
 
-        case "FETCH_DUCK_ALTER_EGO": return fetchDuckAlterEgo(state, action);
+        case "FETCH_DUCK_ALTER_EGO": return fetchDuckAlterEgoReducer(state, action);
 
-        case "FETCH_FROG_ALTER_EGO": return fetchFrogAlterEgo(state, action);
+        case "FETCH_FROG_ALTER_EGO": return fetchFrogAlterEgoReducer(state, action);
 
         default: return state;
     }

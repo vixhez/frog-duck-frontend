@@ -1,8 +1,7 @@
 import { Component } from 'react';
 
 import Quiz from '../Quiz';
-import DuckAlterEgo from '../AlterEgo/DuckAlterEgo';
-import FrogAlterEgo from '../AlterEgo/FrogAlterEgo';
+import AlterEgo from '../AlterEgo';
 import DuckDirectoryButton from '../DuckDirectoryButton';
 import FrogDirectoryButton from '../FrogDirectoryButton';
 import DuckDirectory from '../Directory/DuckDirectory';
@@ -30,8 +29,7 @@ class App extends Component {
                     { ducksLoaded && frogsLoaded ?
                         (!showAllDucks && !showAllFrogs ?
                             <>
-                                <DuckAlterEgo />
-                                <FrogAlterEgo />
+                                <AlterEgo />
 
                                 <DuckDirectoryButton />
                                 <FrogDirectoryButton />

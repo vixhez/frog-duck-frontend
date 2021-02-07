@@ -6,16 +6,6 @@ class Quiz extends Component {
 
 
         this.state = {
-            // traitInputs: {
-            //     extroversion1: this.props.extroversion1,
-            //     extroversion2: this.props.extroversion2,
-            //     generosity1: this.props.generosity1,
-            //     generosity2: this.props.generosity2,
-            //     activeness1: this.props.activeness1,
-            //     activeness2: this.props.activeness2,
-            //     colourfulness1: this.props.colourfulness1,
-            //     colourfulness2: this.props.colourfulness2
-            // }
             traitInputs: this.props.traitInputs
         }
 
