@@ -16,3 +16,15 @@ export const showAllFrogs = (data) => {
         type: "SHOW_ALL_FROGS"
     }
 }
+
+export const fetchDuckAlterEgo = (data) => {
+    return {
+        type: "FETCH_DUCK_ALTER_EGO"
+    }
+}
+
+export const fetchFrogAlterEgo = (data) => {
+    return {
+        type: "FETCH_FROG_ALTER_EGO"
+    }
+}
