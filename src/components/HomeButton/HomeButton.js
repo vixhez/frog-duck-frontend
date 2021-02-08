@@ -2,7 +2,7 @@ const HomeButton = ({ resetApp }) => (
     <>
     <button
         onClick={resetApp}>
-            Start over
+            Start over!
     </button>
     </>
 );
