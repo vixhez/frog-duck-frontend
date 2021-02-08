@@ -1,9 +1,10 @@
 import { Component } from 'react';
 
 import Quiz from '../Quiz';
-import AlterEgo from '../AlterEgo';
 import DuckDirectoryButton from '../DuckDirectoryButton';
 import FrogDirectoryButton from '../FrogDirectoryButton';
+import AlterEgo from '../AlterEgo';
+import HomeButton from '../HomeButton';
 import DuckDirectory from '../Directory/DuckDirectory';
 import FrogDirectory from '../Directory/FrogDirectory';
 
@@ -33,15 +34,18 @@ class App extends Component {
 
                                 <DuckDirectoryButton />
                                 <FrogDirectoryButton />
+                                <HomeButton />
                             </>
                             : (
                                 showAllDucks ?
                                     <div className="duckDirectoryParent">
                                         <DuckDirectory />
+                                        <HomeButton />
                                     </div>
                                     :
                                     <div className="frogDirectoryParent">
                                         <FrogDirectory />
+                                        <HomeButton />
                                     </div>
                                 )
                         )

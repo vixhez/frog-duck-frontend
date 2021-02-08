@@ -28,3 +28,9 @@ export const fetchFrogAlterEgo = (data) => {
         type: "FETCH_FROG_ALTER_EGO"
     }
 }
+
+export const resetApp = (data) => {
+    return {
+        type: "RESET_APP"
+    }
+}

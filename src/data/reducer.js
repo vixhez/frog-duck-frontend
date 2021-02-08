@@ -1,3 +1,5 @@
+import initial from './initial';
+
 const getFrogs = (state, action) => ({
     ...state,
     frogs: action.data,
@@ -94,6 +96,9 @@ const reducer = (state, action) => {
         case "FETCH_DUCK_ALTER_EGO": return fetchDuckAlterEgoReducer(state, action);
 
         case "FETCH_FROG_ALTER_EGO": return fetchFrogAlterEgoReducer(state, action);
+
+        case "RESET_APP": return initial;
+
 
         default: return state;
     }
